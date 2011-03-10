@@ -32,7 +32,7 @@ Documents, RDoc & RI documentation for %{name}.
 %setup -q
 
 %build
-%gem_build -f '(TAGS|test)'
+%gem_build -f test
 
 %install
 rm -rf %{buildroot}
@@ -54,7 +54,7 @@ rm -rf %{buildroot}
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
+#%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
 %{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc
