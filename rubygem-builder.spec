@@ -2,7 +2,7 @@
 
 Summary:    Builders for MarkUp
 Name:       rubygem-%{oname}
-Version:    2.1.2
+Version:    3.0.0
 Release:    %mkrel 1
 Group:      Development/Ruby
 License:    MIT
@@ -27,7 +27,7 @@ XML Markup * XML Events
 rm -rf %buildroot
 mkdir -p %{buildroot}%{ruby_gemdir}
 gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
-            --force --rdoc %{SOURCE0}
+            --force --no-ri %{SOURCE0}
 
 %clean
 rm -rf %buildroot
@@ -36,7 +36,6 @@ rm -rf %buildroot
 %defattr(-, root, root, -)
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/
 %{ruby_gemdir}/gems/%{oname}-%{version}/lib
-%{ruby_gemdir}/gems/%{oname}-%{version}/scripts
 %{ruby_gemdir}/gems/%{oname}-%{version}/test
 %doc %{ruby_gemdir}/doc/%{oname}-%{version}
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/CHANGES
