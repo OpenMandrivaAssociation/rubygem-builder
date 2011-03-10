@@ -1,48 +1,63 @@
-%define oname builder
+# Generated from builder-3.0.0.gem by gem2rpm5 -*- rpm-spec -*-          
+%define	rbname	builder
 
-Summary:    Builders for MarkUp
-Name:       rubygem-%{oname}
-Version:    3.0.0
-Release:    %mkrel 1
-Group:      Development/Ruby
-License:    MIT
-URL:        http://builder.rubyforge.org
-Source0:    http://rubygems.org/gems/%{oname}-%{version}.gem
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
-Requires:   rubygems
-BuildRequires: rubygems
-BuildArch:  noarch
-Provides:   rubygem(%{oname}) = %{version}
+Summary:	Builders for MarkUp
+Name:		rubygem-%{rbname}
+
+Version:	3.0.0
+Release:	1
+Group:		Development/Ruby
+License:	MIT
+URL:		http://onestepback.org
+Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
+BuildArch:	noarch
 
 %description
 Builder provides a number of builder objects that make creating structured
-data simple to do.  Currently the following builder objects are supported:  *
-XML Markup * XML Events
+data
+simple to do.  Currently the following builder objects are supported:
+* XML Markup
+* XML Events
+
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
 
 %prep
+%setup -q
 
 %build
+%gem_build -f '(TAGS|test)'
 
 %install
-rm -rf %buildroot
-mkdir -p %{buildroot}%{ruby_gemdir}
-gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
-            --force --no-ri %{SOURCE0}
+rm -rf %{buildroot}
+%gem_install
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
 
 %files
-%defattr(-, root, root, -)
-%dir %{ruby_gemdir}/gems/%{oname}-%{version}/
-%{ruby_gemdir}/gems/%{oname}-%{version}/lib
-%{ruby_gemdir}/gems/%{oname}-%{version}/test
-%doc %{ruby_gemdir}/doc/%{oname}-%{version}
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/CHANGES
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/Rakefile
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/README
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/doc/releases/builder-1.2.4.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/doc/releases/builder-2.0.0.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/doc/releases/builder-2.1.1.rdoc
-%{ruby_gemdir}/cache/%{oname}-%{version}.gem
-%{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder/*.rb
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+
+%files doc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
+%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
