@@ -4,12 +4,12 @@
 Summary:	Builders for MarkUp
 Name:		rubygem-%{rbname}
 
-Version:	3.0.0
+Version:	3.2.2
 Release:	1
 Group:		Development/Ruby
 License:	MIT
 URL:		http://onestepback.org
-Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+Source0:	http://rubygems.org/gems/builder-3.2.2.gem
 BuildRequires:	rubygems 
 BuildArch:	noarch
 
@@ -35,11 +35,9 @@ Documents, RDoc & RI documentation for %{name}.
 %gem_build -f test
 
 %install
-rm -rf %{buildroot}
 %gem_install
 
 %clean
-rm -rf %{buildroot}
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
@@ -61,16 +59,3 @@ rm -rf %{buildroot}
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
 %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
-
-
-%changelog
-* Thu Mar 10 2011 Per Øyvind Karlsen <peroyvind@mandriva.org> 3.0.0-1
-+ Revision: 643587
-- skip TAGS file..
-- regenerate spec with gem2rpm5
-- new release: 3.0.0
-
-* Sat Oct 09 2010 Rémy Clouard <shikamaru@mandriva.org> 2.1.2-1mdv2011.0
-+ Revision: 584325
-- import rubygem-builder
-
