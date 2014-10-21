@@ -41,21 +41,21 @@ Documents, RDoc & RI documentation for %{name}.
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder/*.rb
 %{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
+# %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
+# %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README
+# %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
 #%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases
+# %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
 %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
