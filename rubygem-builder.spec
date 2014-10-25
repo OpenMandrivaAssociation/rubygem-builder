@@ -2,10 +2,11 @@
 %define	rbname	builder
 
 Summary:	Builders for MarkUp
+
 Name:		rubygem-%{rbname}
 
-Version:	3.0.0
-Release:	1
+Version:	3.2.2
+Release:	3
 Group:		Development/Ruby
 License:	MIT
 URL:		http://onestepback.org
@@ -22,6 +23,7 @@ simple to do.  Currently the following builder objects are supported:
 
 %package	doc
 Summary:	Documentation for %{name}
+
 Group:		Books/Computer books
 Requires:	%{name} = %{EVRD}
 
@@ -35,11 +37,9 @@ Documents, RDoc & RI documentation for %{name}.
 %gem_build -f test
 
 %install
-rm -rf %{buildroot}
 %gem_install
 
 %clean
-rm -rf %{buildroot}
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
@@ -50,9 +50,9 @@ rm -rf %{buildroot}
 %{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/MIT-LICENSE
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README*
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
 #%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
@@ -62,15 +62,4 @@ rm -rf %{buildroot}
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
 %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
 
-
-%changelog
-* Thu Mar 10 2011 Per Øyvind Karlsen <peroyvind@mandriva.org> 3.0.0-1
-+ Revision: 643587
-- skip TAGS file..
-- regenerate spec with gem2rpm5
-- new release: 3.0.0
-
-* Sat Oct 09 2010 Rémy Clouard <shikamaru@mandriva.org> 2.1.2-1mdv2011.0
-+ Revision: 584325
-- import rubygem-builder
 
