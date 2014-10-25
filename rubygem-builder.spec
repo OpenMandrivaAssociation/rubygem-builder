@@ -42,24 +42,24 @@ Documents, RDoc & RI documentation for %{name}.
 %clean
 
 %files
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/builder/*.rb
-%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+%dir %{gem_dir}/gems/%{rbname}-%{version}
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib
+%{gem_dir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib/builder
+%{gem_dir}/gems/%{rbname}-%{version}/lib/builder/*.rb
+%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/MIT-LICENSE
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/CHANGES
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/README*
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/Rakefile
-#%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/TAGS
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases
-%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
-%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+%doc %{gem_dir}/gems/%{rbname}-%{version}/MIT-LICENSE
+%doc %{gem_dir}/gems/%{rbname}-%{version}/CHANGES
+%doc %{gem_dir}/gems/%{rbname}-%{version}/README*
+%doc %{gem_dir}/gems/%{rbname}-%{version}/Rakefile
+#%doc %{gem_dir}/gems/%{rbname}-%{version}/TAGS
+%dir %{gem_dir}/gems/%{rbname}-%{version}/test
+%{gem_dir}/gems/%{rbname}-%{version}/test/*.rb
+%dir %{gem_dir}/gems/%{rbname}-%{version}/doc
+%dir %{gem_dir}/gems/%{rbname}-%{version}/doc/releases
+%doc %{gem_dir}/gems/%{rbname}-%{version}/doc/releases/*.rdoc
+%doc %{gem_dir}/doc/%{rbname}-%{version}
 
 
