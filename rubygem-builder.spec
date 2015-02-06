@@ -6,7 +6,7 @@ Summary:	Builders for MarkUp
 Name:		rubygem-%{rbname}
 
 Version:	3.2.2
-Release:	3
+Release:	4
 Group:		Development/Ruby
 License:	MIT
 URL:		http://onestepback.org
