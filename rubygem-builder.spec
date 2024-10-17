@@ -9,7 +9,7 @@ Version:	3.2.2
 Release:	4
 Group:		Development/Ruby
 License:	MIT
-URL:		http://onestepback.org
+URL:		https://onestepback.org
 Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
 BuildRequires:	rubygems 
 BuildArch:	noarch
